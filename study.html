@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script src = "angular.js"></script>
+		<script type="text/javascript" src = "controllers.js"></script>
+	</head>
+
+	<body ng-app="app">
+		<div ng-controller='MainCtrl'>
+			<div ng-repeat="item in items">
+				<span>{{item.title}}</span>
+				<input ng-model="item.quantity"/>
+				<span {{item.price | currency}}</span>
+				<span> {{item.price * item.quantity | currency}}</span>
+			</div>
+			<div>전체 금액 : {{bill.total | currency}}</div>
+			<div>할인 : {{bill.discount | currency}}</div>
+			<div>결제 금액 : {{bill.subtotal | currency}}</div>
+		</div>
+	</body>
+</html>
